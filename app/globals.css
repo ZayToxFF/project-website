@@ -17,13 +17,30 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: white;
+  background: #141414;
+}
+
+.point {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.point::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.31) 1px, transparent 1px);
+  background-size: 50px 50px; /* Taille des points */
+  z-index: -2;
+}
+
+a:hover {
+  color: white;
 }
 
 @layer utilities {
@@ -31,3 +48,4 @@ body {
     text-wrap: balance;
   }
 }
+
